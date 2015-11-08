@@ -4,16 +4,21 @@
   "description": "DefinitelyTyped review BOT",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "monitor": "$(npm bin)/nodemon app.js",
-    "deploy": "gcloud preview app deploy app.yaml --promote"
+    "setup": "$(npm bin)/dtsm install",
+    "build": "$(npm bin)/tsc -p ./",
+    "start": "node lib/app.js",
+    "monitor": "$(npm bin)/nodemon lib/app.js",
+    "deploy": "npm run build && gcloud preview app deploy app.yaml --promote"
   },
   "engines": {
     "node": ">=0.10.3 <5.0"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
-    "nodemon": "^1.8.1"
+    "nodemon": "^1.8.1",
+    "dtsm": "^0.12.0",
+    "typescript": "^1.6.2"
   }
 }

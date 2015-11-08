@@ -3,3 +3,8 @@
 node_modules
 
 *.log
+
+typings/
+lib/**/*.js
+lib/**/*.js.map
+lib/**/*.d.ts
