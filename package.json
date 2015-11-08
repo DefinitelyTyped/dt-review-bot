@@ -1,0 +1,19 @@
+{
+  "name": "definitelytyped-review-bot",
+  "version": "0.0.1",
+  "description": "DefinitelyTyped review BOT",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "monitor": "$(npm bin)/nodemon app.js",
+    "deploy": "gcloud preview app deploy app.yaml --promote"
+  },
+  "engines": {
+    "node": ">=0.10.3 <5.0"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  }
+}
