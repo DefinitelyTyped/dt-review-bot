@@ -8,3 +8,8 @@ typings/
 lib/**/*.js
 lib/**/*.js.map
 lib/**/*.d.ts
+utils/**/*.js
+utils/**/*.js.map
+utils/**/*.d.ts
+
+token.json

@@ -6,15 +6,18 @@
   "scripts": {
     "setup": "$(npm bin)/dtsm install",
     "build": "$(npm bin)/tsc -p ./",
+    "auth": "$(npm bin)/tsc -p ./ && node utils/authToken.js",
     "start": "node lib/app.js",
     "monitor": "$(npm bin)/nodemon lib/app.js",
-    "deploy": "npm run build && gcloud preview app deploy app.yaml --promote"
+    "deploy": "npm run build && gcloud preview app deploy app.yaml --promote --version prod"
   },
   "engines": {
     "node": ">=0.10.3 <5.0"
   },
   "license": "MIT",
   "dependencies": {
+    "dt-review-tool": "^0.2.0",
+    "github": "^0.2.4"
   },
   "devDependencies": {
     "nodemon": "^1.8.1",
