@@ -4,11 +4,11 @@
   "description": "DefinitelyTyped review BOT",
   "private": true,
   "scripts": {
-    "setup": "$(npm bin)/dtsm install",
-    "build": "$(npm bin)/tsc -p ./",
-    "auth": "$(npm bin)/tsc -p ./ && node utils/authToken.js",
+    "setup": "dtsm install",
+    "build": "tsc -p ./",
+    "auth": "tsc -p ./ && node utils/authToken.js",
     "start": "node lib/app.js",
-    "monitor": "$(npm bin)/nodemon lib/app.js",
+    "monitor": "nodemon lib/app.js",
     "deploy": "npm run build && gcloud preview app deploy app.yaml --promote --version prod"
   },
   "engines": {
@@ -16,12 +16,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "dt-review-tool": "^0.2.1",
+    "dt-review-tool": "^0.3.0",
     "github": "^0.2.4"
   },
   "devDependencies": {
     "nodemon": "^1.8.1",
-    "dtsm": "^0.12.0",
-    "typescript": "^1.6.2"
+    "dtsm": "^0.13.0",
+    "typescript": "^1.7.3"
   }
 }
