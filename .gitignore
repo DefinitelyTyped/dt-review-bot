@@ -3,6 +3,7 @@
 node_modules
 
 billing/
+dt-review-bot-*.json
 
 *.log
 

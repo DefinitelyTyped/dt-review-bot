@@ -1,0 +1,18 @@
+machine:
+  environment:
+    ACCOUNT: account-1@dt-review-bot.iam.gserviceaccount.com
+  node:
+    version: v5
+
+dependencies:
+  post:
+    - npm run setup
+
+deployment:
+  appengine:
+    branch: master
+    commands:
+      - gcloud version
+      - echo $GCLOUD_KEY | base64 --decode > service_account.json
+      - gcloud auth activate-service-account $ACCOUNT --key-file ./service_account.json
+      - npm run deploy

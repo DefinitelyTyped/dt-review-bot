@@ -6,10 +6,11 @@
   "scripts": {
     "setup": "dtsm install",
     "build": "tsc -p ./",
+    "test": "npm run build",
     "auth": "tsc -p ./ && node utils/authToken.js",
     "start": "node lib/app.js",
     "monitor": "nodemon lib/app.js",
-    "deploy": "npm run build && gcloud preview app deploy app.yaml --promote --version prod",
+    "deploy": "npm run build && gcloud --project dt-review-bot preview app deploy app.yaml --promote --version prod -q",
     "cp-billing": "gsutil cp \"gs://definitelytyped-review-bot/*.json\" ./billing"
   },
   "engines": {
