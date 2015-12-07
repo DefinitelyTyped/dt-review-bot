@@ -9,10 +9,11 @@
     "auth": "tsc -p ./ && node utils/authToken.js",
     "start": "node lib/app.js",
     "monitor": "nodemon lib/app.js",
-    "deploy": "npm run build && gcloud preview app deploy app.yaml --promote --version prod"
+    "deploy": "npm run build && gcloud preview app deploy app.yaml --promote --version prod",
+    "cp-billing": "gsutil cp \"gs://definitelytyped-review-bot/*.json\" ./billing"
   },
   "engines": {
-    "node": ">=0.10.3 <5.0"
+    "node": ">=4.0"
   },
   "license": "MIT",
   "dependencies": {
