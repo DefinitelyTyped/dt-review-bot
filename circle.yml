@@ -1,17 +1,10 @@
 machine:
   environment:
     ACCOUNT: account-1@dt-review-bot.iam.gserviceaccount.com
-    GCLOUD_VERSION: 0.9.89
-    PATH: $HOME/google-cloud-sdk/bin:$PATH
   node:
     version: v5
 
 dependencies:
-  cache_directories:
-    - $HOME/google-cloud-sdk
-  pre:
-    - curl -o google-cloud-sdk.tar.gz https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_VERSION}-linux-x86_64.tar.gz
-    - tar zxvf google-cloud-sdk.tar.gz -C $HOME
   post:
     - npm run setup
 
@@ -19,7 +12,6 @@ deployment:
   appengine:
     branch: master
     commands:
-      - which gcloud
       - gcloud version
       - echo $GCLOUD_KEY | base64 --decode > service_account.json
       - gcloud auth activate-service-account $ACCOUNT --key-file ./service_account.json
