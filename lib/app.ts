@@ -12,6 +12,17 @@ let auth: { token: string; } = require("../token");
 let port = process.env.PORT || 8080;
 let server = http.createServer();
 server.on("request", (req: http.ServerRequest, res: http.ServerResponse) => {
+    if (req.url === "/_ah/health" || req.url === "/_ah/start") {
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.end("ok");
+        return;
+    }
+    if (req.url === "/_ah/stop") {
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.end("ok");
+        process.exit();
+        return;
+    }
     if (req.url !== "/github/receive") {
         res.writeHead(200, { "Content-Type": "text/plain" });
         res.end("Hello World\n");
