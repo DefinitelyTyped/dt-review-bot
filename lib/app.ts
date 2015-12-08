@@ -7,7 +7,7 @@ import * as review from "dt-review-tool";
 import Client = require("github");
 /* tslint:enable:no-require-imports */
 
-let auth: { token: string; } = require("../token");
+let auth: { token: string; } = require("./token.json");
 
 let port = process.env.PORT || 8080;
 let server = http.createServer();
