@@ -10,7 +10,7 @@
     "auth": "tsc -p ./ && node utils/authToken.js",
     "start": "node lib/app.js",
     "monitor": "nodemon lib/app.js",
-    "deploy": "npm run build && gcloud --project dt-review-bot preview app deploy app.yaml --promote --version prod2 -q --verbosity info",
+    "deploy": "npm run build && gcloud --project dt-review-bot preview app deploy app.yaml --promote --version prod -q --verbosity info",
     "cp-billing": "gsutil cp \"gs://definitelytyped-review-bot/*.json\" ./billing"
   },
   "engines": {
