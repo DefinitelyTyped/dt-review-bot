@@ -14,13 +14,13 @@
   },
   "dependencies": {
     "node/node.d.ts": {
-      "ref": "715df764419937a75a25dcd76bfc954157bc7b96"
+      "ref": "0d622d857f97d44ea7dcad2b3edec1f23c48fe9e"
     },
     "es6-promise/es6-promise.d.ts": {
-      "ref": "715df764419937a75a25dcd76bfc954157bc7b96"
+      "ref": "0d622d857f97d44ea7dcad2b3edec1f23c48fe9e"
     },
     "parsimmon/parsimmon.d.ts": {
-      "ref": "715df764419937a75a25dcd76bfc954157bc7b96"
+      "ref": "0d622d857f97d44ea7dcad2b3edec1f23c48fe9e"
     }
   }
 }
