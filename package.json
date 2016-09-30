@@ -4,8 +4,7 @@
   "description": "DefinitelyTyped review BOT",
   "private": true,
   "scripts": {
-    "setup": "dtsm install",
-    "build": "tsc -p ./",
+    "build": "tsc -p ./ && tsfmt -r",
     "test": "npm run build",
     "auth": "tsc -p ./ && node utils/authToken.js",
     "start": "node lib/app.js",
@@ -18,12 +17,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "dt-review-tool": "^0.3.7",
-    "github": "^0.2.4"
+    "dt-review-tool": "^0.4.0",
+    "github": "^3.1.1"
   },
   "devDependencies": {
+    "@types/node": "^6.0.41",
+    "@types/parsimmon": "^0.5.29",
     "nodemon": "^1.9.2",
-    "dtsm": "^1.1.0",
-    "typescript": "^1.8.10"
+    "typescript": "^2.0.3",
+    "typescript-formatter": "^3.0.1"
   }
 }

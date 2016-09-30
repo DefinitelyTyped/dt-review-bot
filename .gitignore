@@ -18,3 +18,4 @@ utils/**/*.js.map
 utils/**/*.d.ts
 
 token.json
+.envrc

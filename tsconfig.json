@@ -1,17 +1,43 @@
 {
     "compilerOptions": {
         "module": "commonjs",
+        "moduleResolution": "node",
         "target": "es5",
+        "lib": [
+            "dom",
+            "es2017"
+        ],
+        "types": [
+            "node"
+        ],
         "noImplicitAny": true,
+        "strictNullChecks": true,
+        "noFallthroughCasesInSwitch": false,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "stripInternal": true,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": false,
         "rootDir": ".",
         "sourceMap": true,
-        "declaration": false,
-        "listFiles": true,
+        "declaration": true,
+        "listFiles": false,
+        "traceResolution": false,
         "newLine": "LF",
-        "noEmitOnError": true
+        "noEmitOnError": true,
+        "inlineSources": true,
+        "listEmittedFiles": false
     },
+    "include": [
+        "lib/**/*.ts",
+        "utils/**/*.ts",
+        "github.d.ts"
+    ],
     "exclude": [
-      "node_modules"
+        "node_modules"
     ]
 }

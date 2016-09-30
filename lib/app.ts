@@ -1,5 +1,3 @@
-"use strict";
-
 import * as http from "http";
 import * as review from "dt-review-tool";
 
@@ -54,7 +52,7 @@ server.on("request", (req: http.ServerRequest, res: http.ServerResponse) => {
 server.listen(port);
 console.log(`Server running at http://127.0.0.1:${port}/`);
 
-function handlePullRequestOpened(req: http.ServerRequest, res: http.ServerResponse, payload: PullRequestOpened) {
+function handlePullRequestOpened(_req: http.ServerRequest, res: http.ServerResponse, payload: PullRequestOpened) {
     review
         .generateComment({
             user: payload.repository.owner.login,
@@ -76,7 +74,7 @@ function handlePullRequestOpened(req: http.ServerRequest, res: http.ServerRespon
                     repo: payload.repository.name,
                     number: payload.number,
                     body: comments.join("\n------\n\n")
-                }, (err: any, res: any) => {
+                }, (err: any, _res: any) => {
                     if (err) {
                         reject(err);
                         return;

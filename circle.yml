@@ -4,10 +4,6 @@ machine:
   node:
     version: v5
 
-dependencies:
-  post:
-    - npm run setup
-
 deployment:
   appengine:
     branch: master

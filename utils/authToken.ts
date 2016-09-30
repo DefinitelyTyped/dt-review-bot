@@ -69,7 +69,7 @@ function getBasicAuthInfo(): Promise<BasicAuthInfo> {
         });
 
     function question(q: string) {
-        return new Promise<string>((resolve, reject) => {
+        return new Promise<string>((resolve, _reject) => {
             rl.question(q, (line: string) => {
                 resolve(line);
             });
