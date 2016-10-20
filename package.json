@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "dt-review-tool": "^0.4.0",
+    "dt-review-tool": "^0.5.0",
     "github": "^3.1.1"
   },
   "devDependencies": {
