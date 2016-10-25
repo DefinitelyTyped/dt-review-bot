@@ -55,7 +55,7 @@ console.log(`Server running at http://127.0.0.1:${port}/`);
 function handlePullRequestOpened(_req: http.ServerRequest, res: http.ServerResponse, payload: PullRequestOpened) {
     review
         .generateComment({
-            user: payload.repository.owner.login,
+            owner: payload.repository.owner.login,
             repo: payload.repository.name,
             number: payload.number
         })

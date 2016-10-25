@@ -17,12 +17,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "dt-review-tool": "^0.5.0",
-    "github": "^3.1.1"
+    "dt-review-tool": "^0.6.0",
+    "github": "^5.3.3"
   },
   "devDependencies": {
     "@types/node": "^6.0.41",
-    "@types/parsimmon": "^0.5.29",
+    "@types/parsimmon": "^0.9.30",
     "nodemon": "^1.9.2",
     "typescript": "^2.0.3",
     "typescript-formatter": "^3.0.1"
