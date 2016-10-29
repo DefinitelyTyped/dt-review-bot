@@ -9,7 +9,8 @@
     "auth": "tsc -p ./ && node utils/authToken.js",
     "start": "node lib/app.js",
     "monitor": "nodemon lib/app.js",
-    "deploy": "npm run build && gcloud --project dt-review-bot preview app deploy app.yaml --promote --version prod -q --verbosity info",
+    "deploy:gaefe": "gcloud --project dt-review-bot app deploy app.yaml --promote --version prod -q --verbosity info",
+    "deploy:cloudfunctions": "gcloud --project dt-review-bot alpha functions deploy github-receive --stage-bucket dt-review-bot-cloudfunctions-staging --entry-point githubEventHandlerForCloudFunctions --trigger-http",
     "cp-billing": "gsutil cp \"gs://definitelytyped-review-bot/*.json\" ./billing"
   },
   "engines": {
@@ -24,7 +25,7 @@
     "@types/node": "^6.0.41",
     "@types/parsimmon": "^0.9.30",
     "nodemon": "^1.9.2",
-    "typescript": "^2.0.3",
-    "typescript-formatter": "^3.0.1"
+    "typescript": "^2.0.6",
+    "typescript-formatter": "^4.0.0"
   }
 }

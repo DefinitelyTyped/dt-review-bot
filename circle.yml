@@ -2,13 +2,20 @@ machine:
   environment:
     ACCOUNT: account-1@dt-review-bot.iam.gserviceaccount.com
   node:
-    version: v5
+    version: v6
 
 deployment:
   appengine:
     branch: master
     commands:
+      # shared
       - echo $GITHUB_TOKEN | base64 --decode > lib/token.json
       - echo $GCLOUD_KEY | base64 --decode > service_account.json
+      - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
       - gcloud auth activate-service-account $ACCOUNT --key-file ./service_account.json
-      - npm run deploy
+      # for Google CloudFunctions
+      - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components install alpha
+      - rm -rf ./node_modules/ && npm install --prod
+      - npm run deploy:cloudfunctions
+      # for GAE/FE
+      - npm run deploy:gaefe

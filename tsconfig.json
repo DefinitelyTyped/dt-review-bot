@@ -23,16 +23,18 @@
         "skipDefaultLibCheck": true,
         "skipLibCheck": false,
         "rootDir": ".",
-        "sourceMap": true,
-        "declaration": true,
+        "declaration": false,
         "listFiles": false,
         "traceResolution": false,
         "newLine": "LF",
         "noEmitOnError": true,
+        "sourceMap": true,
         "inlineSources": true,
+        "inlineSourceMap": false,
         "listEmittedFiles": false
     },
     "include": [
+        "index.ts",
         "lib/**/*.ts",
         "utils/**/*.ts",
         "github.d.ts"
