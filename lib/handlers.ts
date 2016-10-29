@@ -94,9 +94,8 @@ function githubPullRequestOpenedHandler(_req: http.ServerRequest, res: http.Serv
             number: payload.number,
         })
         .then(comments => {
-            res.write(comments.join("\n------\n\n"));
+            res.write(comments.join("\n\n------\n\n"));
             let github = new Client({
-                version: "3.0.0"
             });
             github.authenticate({
                 type: "oauth",
@@ -104,10 +103,10 @@ function githubPullRequestOpenedHandler(_req: http.ServerRequest, res: http.Serv
             });
             return new Promise<void>((resolve, reject) => {
                 github.issues.createComment({
-                    user: payload.repository.owner.login,
+                    owner: payload.repository.owner.login,
                     repo: payload.repository.name,
                     number: payload.number,
-                    body: comments.join("\n------\n\n")
+                    body: comments.join("\n\n------\n\n")
                 }, (err: any, _res: any) => {
                     if (err) {
                         reject(err);

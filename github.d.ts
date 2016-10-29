@@ -42,7 +42,7 @@ declare module "github" {
 
 declare module github {
     interface Options {
-        version: string;
+        version?: string;
         debug?: boolean;
         protocol?: string;
         host?: string;
