@@ -18,14 +18,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "dt-review-tool": "^0.6.2",
+    "dt-review-tool": "^0.6.3",
     "github": "^5.3.3"
   },
   "devDependencies": {
     "@types/node": "^6.0.41",
     "@types/parsimmon": "^0.9.30",
     "nodemon": "^1.9.2",
-    "typescript": "~2.0.6",
-    "typescript-formatter": "^4.0.0"
+    "typescript": "^2.0.6",
+    "typescript-formatter": "^5.0.0"
   }
 }
