@@ -32,7 +32,8 @@ interface PullRequestOpened {
 }
 
 export function githubEventHandler(req: http.ServerRequest, res: http.ServerResponse) {
-    let githubEvent: string = req.headers["X-GitHub-Event".toLowerCase()] || "'???'";
+    let githubEventHeader = req.headers["X-GitHub-Event".toLowerCase()];
+    let githubEvent: string = (typeof githubEventHeader === "string" ? githubEventHeader : githubEventHeader[0]) || "'???'";
 
     let requestBody = "";
     req.on("data", (chunk: any) => {
